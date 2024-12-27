@@ -5,6 +5,7 @@ public class Circuit
     // Attributes
     private int lines, columns;
     private Block[][] blocks;
+    Printer printer = new Printer();
 
     // Constructor
     public Circuit(int lines, int columns) 
@@ -44,25 +45,25 @@ public class Circuit
     {
         if (line < 0 || line >= this.lines || column < 0 || column >= this.columns) 
             throw new IllegalArgumentException("Trying to set out of circuit bounds");
-
-        this.blocks[line][column] = block;
+    
+        Block newBlock = new Block(block.getLines(), block.getColumns());
+        for (int i = 0; i < block.getLines(); i++) {
+            for (int j = 0; j < block.getColumns(); j++) {
+                newBlock.setSpecificSquare(i, j, block.getSquares()[i][j].getId());
+            }
+        }
+    
+        newBlock.setBlockX(column);
+        newBlock.setBlockY(line);
+    
+        this.blocks[line][column] = newBlock;
     }
+    
 
     public void setCircuit(Block[][] blocks)
     {
         for (int i = 0; i < this.lines; i++)
             for (int j = 0; j < this.columns; j++) 
                 this.blocks[i][j] = blocks[i][j];
-    }
-
-    public void printCircuit()
-    {
-        for (int i = 0; i < this.lines; i++)
-        {
-            for (int j = 0; j < this.columns; j++) 
-            {
-                this.blocks[i][j].printBlock();
-            }  
-        }
     }
 }

@@ -4,12 +4,13 @@ public class Block
 {
     // Attributes
     private int lines, columns;
-    private int[][] squares;
+    private int blockX, blockY;
+    private Symbol[][] squares;
 
     // Constructor
     public Block(int lines, int columns) 
     { 
-        this.squares = new int[lines][columns];
+        this.squares = new Symbol[lines][columns];
         this.setLines(lines);
         this.setColumns(columns); 
     }
@@ -17,18 +18,28 @@ public class Block
     // Methods
     public int getLines() 
     { 
-        return lines; 
+        return this.lines; 
     } 
 
     public int getColumns() 
     { 
-        return columns; 
+        return this.columns; 
     }
 
-    public int[][] getSquares() 
+    public Symbol[][] getSquares() 
     { 
-        return squares; 
-    } 
+        return this.squares; 
+    }
+    
+    public int getBlockX()
+    {
+        return this.blockX;
+    }
+
+    public int getBlockY()
+    {
+        return this.blockY;
+    }
     
     public void setLines(int lines) 
     { 
@@ -40,50 +51,28 @@ public class Block
         this.columns = columns;  
     }
 
+    public void setBlockX(int blockX)
+    {
+        this.blockX = blockX;
+    }
+
+    public void setBlockY(int blockY)
+    {
+        this.blockY = blockY;
+    }
+
     public void setSpecificSquare(int line, int column, int value) 
     { 
         if (line < 0 || line >= this.lines || column < 0 || column >= this.columns) 
             throw new IllegalArgumentException("Trying to set out of block bounds");
-
-        this.squares[line][column] = value; 
+        
+        this.squares[line][column] = new Symbol(column, line, value);
     }
 
     public void setSquares(int[][] values)
     {
-        this.squares = values;
-    }
-    
-    public void printBlock()
-    {
-        // Upper border
-        for (int i = 0; i < this.columns; i++) 
-            System.out.printf(" ");  
-        System.out.printf("\n"); 
-
         for (int i = 0; i < this.lines; i++) 
-        {
-            System.out.printf(" ");
-
             for (int j = 0; j < this.columns; j++) 
-            {
-                if (this.squares[i][j] == 0)  // BROWN SQUARE
-                    System.out.printf("\uD83D\uDFEB");
-                else if (this.squares[i][j] == 1)  // WHITE SQUARE
-                    System.out.printf("\u2B1C");     
-                else if (this.squares[i][j] == 2)  // ORANGE SQUARE
-                    System.out.printf("\uD83D\uDFE7");
-                else if (this.squares[i][j] == 3)  // ORANGE CIRCLE
-                    System.out.printf("\uD83D\uDFE0"); 
-                else if (this.squares[i][j] == 4)  // YELLOW SQUARE
-                    System.out.printf("\uD83D\uDFE8"); 
-                else if (this.squares[i][j] == 5)  // YELLOW CIRCLE
-                    System.out.printf("\uD83D\uDFE1"); 
-                else if (this.squares[i][j] == 6)  // BLUE SQUARE
-                    System.out.printf("\uD83D\uDFE6"); 
-                else  // BLUE CIRCLE
-                    System.out.printf("\uD83D\u1F535");     
-            }
-            System.out.printf(" \n");
-        }
+                this.squares[i][j] = new Symbol(j + (lines * blockX), i + (columns * blockY), values[i][j]);
     }
 }
