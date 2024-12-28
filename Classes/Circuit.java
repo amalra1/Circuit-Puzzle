@@ -58,7 +58,6 @@ public class Circuit
     
         this.blocks[line][column] = newBlock;
     }
-    
 
     public void setCircuit(Block[][] blocks)
     {
