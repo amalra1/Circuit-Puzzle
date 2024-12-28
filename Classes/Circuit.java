@@ -47,14 +47,10 @@ public class Circuit
             throw new IllegalArgumentException("Trying to set out of circuit bounds");
     
         Block newBlock = new Block(block.getLines(), block.getColumns());
-        for (int i = 0; i < block.getLines(); i++) {
-            for (int j = 0; j < block.getColumns(); j++) {
+        
+        for (int i = 0; i < block.getLines(); i++)
+            for (int j = 0; j < block.getColumns(); j++)
                 newBlock.setSpecificSquare(i, j, block.getSquares()[i][j].getId());
-            }
-        }
-    
-        newBlock.setBlockX(column);
-        newBlock.setBlockY(line);
     
         this.blocks[line][column] = newBlock;
     }
