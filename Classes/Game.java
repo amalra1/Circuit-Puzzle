@@ -1,5 +1,7 @@
 package Classes;
 
+import java.util.Scanner;
+
 public class Game 
 {
     public static void setInitialState(Circuit circuit)
@@ -295,11 +297,39 @@ public class Game
 
     public static void main(String[] args) 
     {
+        Scanner scanner = new Scanner(System.in);
         Printer printer = new Printer();
         Circuit circuit = new Circuit(4, 6);
+        char input;
+
+        // FLAGS
+        int gameOver = 0;
+        int draw = 1;
         
         setInitialState(circuit);
 
-        printer.printCircuit(circuit);
+        // Game Logic
+        while (gameOver == 0)
+        {
+            // Reads input
+            input = scanner.next().charAt(0);
+
+            // Treats inputs
+            if (input == 'r')
+                draw = 1;
+            else if (input == 'q')
+            {
+                System.out.println("Game ended by player choice");
+                break;
+            }
+
+            // Draw on Screen
+            if (draw == 1)
+            {
+                printer.flushScreen();
+                printer.printCircuit(circuit);
+                draw = 0;
+            }
+        }
     }
 }

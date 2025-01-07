@@ -54,4 +54,9 @@ public class Printer
             System.out.printf("\n");  // Space between block lines
         }
     }
+
+    public void flushScreen()
+    {
+        System.out.print("\033\143");
+    }
 }
