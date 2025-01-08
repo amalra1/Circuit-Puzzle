@@ -1,9 +1,6 @@
 package Classes;
 
-import java.util.Scanner;
-
-public class Game 
-{
+public class Game {
     public static void setInitialState(Circuit circuit)
     {
         // Create each block
@@ -16,7 +13,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         Block block1 = new Block(5, 5);
         int[][] block1Values = {
             {0, 0, 0, 0, 0},
@@ -25,7 +22,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         Block block2 = new Block(5, 5);
         int[][] block2Values = {
             {0, 0, 6, 0, 0},
@@ -34,7 +31,7 @@ public class Game
             {0, 0, 6, 6, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block3 = new Block(5, 5);
         int[][] block3Values = {
             {0, 0, 6, 0, 0},
@@ -43,7 +40,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         Block block4 = new Block(5, 5);
         int[][] block4Values = {
             {0, 0, 6, 0, 0},
@@ -52,7 +49,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block5 = new Block(5, 5);
         int[][] block5Values = {
             {0, 0, 0, 0, 0},
@@ -61,9 +58,9 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         // Line 2
-
+    
         Block block6 = new Block(5, 5);
         int[][] block6Values = {
             {0, 0, 0, 0, 0},
@@ -72,7 +69,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         Block block7 = new Block(5, 5);
         int[][] block7Values = {
             {0, 0, 6, 0, 0},
@@ -81,7 +78,7 @@ public class Game
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block8 = new Block(5, 5);
         int[][] block8Values = {
             {0, 0, 6, 0, 0},
@@ -90,7 +87,7 @@ public class Game
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block9 = new Block(5, 5);
         int[][] block9Values = {
             {0, 0, 0, 0, 0},
@@ -99,7 +96,7 @@ public class Game
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block10 = new Block(5, 5);
         int[][] block10Values = {
             {0, 0, 6, 0, 0},
@@ -108,7 +105,7 @@ public class Game
             {0, 0, 6, 6, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block11 = new Block(5, 5);
         int[][] block11Values = {
             {0, 0, 0, 0, 0},
@@ -117,7 +114,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         // Line 3
         Block block12 = new Block(5, 5);
         int[][] block12Values = {
@@ -127,7 +124,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         Block block13 = new Block(5, 5);
         int[][] block13Values = {
             {0, 0, 6, 0, 0},
@@ -136,7 +133,7 @@ public class Game
             {0, 0, 6, 6, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block14 = new Block(5, 5);
         int[][] block14Values = {
             {0, 0, 6, 0, 0},
@@ -145,7 +142,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block15 = new Block(5, 5);
         int[][] block15Values = {
             {0, 0, 6, 0, 0},
@@ -154,7 +151,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         Block block16 = new Block(5, 5);
         int[][] block16Values = {
             {0, 0, 0, 0, 0},
@@ -163,7 +160,7 @@ public class Game
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block17 = new Block(5, 5);
         int[][] block17Values = {
             {0, 0, 0, 0, 0},
@@ -172,7 +169,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         // Line 4
         Block block18 = new Block(5, 5);
         int[][] block18Values = {
@@ -182,7 +179,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         Block block19 = new Block(5, 5);
         int[][] block19Values = {
             {0, 0, 0, 0, 0},
@@ -191,7 +188,7 @@ public class Game
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block20 = new Block(5, 5);
         int[][] block20Values = {
             {0, 0, 6, 0, 0},
@@ -200,7 +197,7 @@ public class Game
             {0, 0, 6, 6, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block21 = new Block(5, 5);
         int[][] block21Values = {
             {0, 0, 0, 0, 0},
@@ -209,7 +206,7 @@ public class Game
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block22 = new Block(5, 5);
         int[][] block22Values = {
             {0, 0, 6, 0, 0},
@@ -218,7 +215,7 @@ public class Game
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
         };
-
+    
         Block block23 = new Block(5, 5);
         int[][] block23Values = {
             {0, 0, 0, 0, 0},
@@ -227,7 +224,7 @@ public class Game
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
         };
-
+    
         // Set squares for each block
         // Line 1
         block0.setSquares(block0Values);
@@ -236,7 +233,7 @@ public class Game
         block3.setSquares(block3Values);
         block4.setSquares(block4Values);
         block5.setSquares(block5Values);
-
+    
         // Line 2
         block6.setSquares(block6Values);
         block7.setSquares(block7Values);
@@ -244,7 +241,7 @@ public class Game
         block9.setSquares(block9Values);
         block10.setSquares(block10Values);
         block11.setSquares(block11Values);
-
+    
         // Line 3
         block12.setSquares(block12Values);
         block13.setSquares(block13Values);
@@ -252,7 +249,7 @@ public class Game
         block15.setSquares(block15Values);
         block16.setSquares(block16Values);
         block17.setSquares(block17Values);
-
+    
         // Line 4
         block18.setSquares(block18Values);
         block19.setSquares(block19Values);
@@ -260,7 +257,7 @@ public class Game
         block21.setSquares(block21Values);
         block22.setSquares(block22Values);
         block23.setSquares(block23Values);
-
+    
         // Set block in Circuit
         // Line 1
         circuit.setSpecificBlock(0, 0, block0);
@@ -269,7 +266,7 @@ public class Game
         circuit.setSpecificBlock(0, 3, block3);
         circuit.setSpecificBlock(0, 4, block4);
         circuit.setSpecificBlock(0, 5, block5);
-
+    
         // Line 2
         circuit.setSpecificBlock(1, 0, block6);
         circuit.setSpecificBlock(1, 1, block7);
@@ -277,7 +274,7 @@ public class Game
         circuit.setSpecificBlock(1, 3, block9);
         circuit.setSpecificBlock(1, 4, block10);
         circuit.setSpecificBlock(1, 5, block11);
-
+    
         // Line 3
         circuit.setSpecificBlock(2, 0, block12);
         circuit.setSpecificBlock(2, 1, block13);
@@ -285,7 +282,7 @@ public class Game
         circuit.setSpecificBlock(2, 3, block15);
         circuit.setSpecificBlock(2, 4, block16);
         circuit.setSpecificBlock(2, 5, block17);
-
+    
         // Line 4
         circuit.setSpecificBlock(3, 0, block18);
         circuit.setSpecificBlock(3, 1, block19);
@@ -297,39 +294,63 @@ public class Game
 
     public static void main(String[] args) 
     {
-        Scanner scanner = new Scanner(System.in);
         Printer printer = new Printer();
         Circuit circuit = new Circuit(4, 6);
-        char input;
+        KeyInputListener keyInputListener = new KeyInputListener();
+        Animation animation = new Animation();
+
+        keyInputListener.setVisible(true);
+
+        // THREADS
+        Thread animationThread = new Thread(animation);
 
         // FLAGS
-        int gameOver = 0;
-        int draw = 1;
-        
+        boolean redraw = false;
+
+        animationThread.start();
+
         setInitialState(circuit);
 
         // Game Logic
-        while (gameOver == 0)
+        while (true) 
         {
             // Reads input
-            input = scanner.next().charAt(0);
+            char input = keyInputListener.getInput();
 
             // Treats inputs
-            if (input == 'r')
-                draw = 1;
-            else if (input == 'q')
+            if (input != ' ') 
             {
-                System.out.println("Game ended by player choice");
-                break;
+                if (input == 'r') 
+                {
+                    redraw = true;
+                } 
+                else if (input == 'q') 
+                {
+                    System.out.println("Game ended by player choice");
+                    break;
+                } 
+                else if (input == 'd') 
+                {
+                    // test
+                }
+
+                // Resets input
+                keyInputListener.resetInput();
             }
 
-            // Draw on Screen
-            if (draw == 1)
+            // Draw
+            if (redraw) 
             {
                 printer.flushScreen();
                 printer.printCircuit(circuit);
-                draw = 0;
+                redraw = false;
             }
         }
+
+        animation.stop();
+        animationThread.interrupt();
+        keyInputListener.dispose();
+        
+        System.out.println("Game ended");
     }
 }

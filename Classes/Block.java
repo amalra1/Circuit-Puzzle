@@ -5,6 +5,7 @@ public class Block
     // Attributes
     private int lines, columns;
     //private String type;
+    private int selected;
     private Symbol[][] squares;
 
     // Constructor
@@ -13,6 +14,7 @@ public class Block
         this.squares = new Symbol[lines][columns];
         this.setLines(lines);
         this.setColumns(columns); 
+        this.setSelected(0);
         //this.setType(type);
     }
 
@@ -25,6 +27,11 @@ public class Block
     public int getColumns() 
     { 
         return this.columns; 
+    }
+
+    public int getSelected() 
+    { 
+        return this.selected; 
     }
 
     public Symbol[][] getSquares() 
@@ -40,6 +47,11 @@ public class Block
     public void setColumns(int columns) 
     { 
         this.columns = columns;  
+    }
+
+    public void setSelected(int selected) 
+    { 
+        this.selected = selected;  
     }
 
     public void setSpecificSquare(int line, int column, int value) 
