@@ -55,11 +55,19 @@ public class Printer
         }
     }
 
-    public void printMenu()
+    public void printMenu() 
     {
+        System.out.println("       ____  \\\\       _____     ____   _    _ ");
+        System.out.println("      / ___   \\\\     |  __ \\   / ___  | |  | |");
+        System.out.println("     | |       \\\\    | |__) | | |     | |  | |");
+        System.out.println("     | |        ---- |  _  /  | |     | |  | |");
+        System.out.println("     | |___       // | | \\ \\  | |___  | |__| |");
+        System.out.println("      \\____      //  |_|  \\_\\  \\____  \\______/");
         
+        System.out.println();
+        System.out.println("  > Press to Start <");
     }
-
+    
     public void flushScreen()
     {
         System.out.print("\033\143");
