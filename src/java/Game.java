@@ -1,4 +1,4 @@
-package Classes;
+package src.java;
 
 public class Game {
     public static void setInitialState(Circuit circuit)
@@ -306,6 +306,9 @@ public class Game {
 
         // FLAGS
         boolean redraw = false;
+
+        printer.flushScreen();
+        printer.printMenu();
 
         animationThread.start();
 

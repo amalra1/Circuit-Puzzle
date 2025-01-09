@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Compiling
-javac Classes/*.java
+javac src/java/*.java
 
 # Executing
-java Classes.Game
+java src/java.Game

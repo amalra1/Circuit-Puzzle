@@ -1,4 +1,4 @@
-package Classes;
+package src.java;
 
 public class Printer 
 {
@@ -53,6 +53,11 @@ public class Printer
             }
             System.out.printf("\n");  // Space between block lines
         }
+    }
+
+    public void printMenu()
+    {
+        
     }
 
     public void flushScreen()
