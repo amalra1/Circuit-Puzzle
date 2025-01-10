@@ -57,15 +57,22 @@ public class Printer
 
     public void printMenu() 
     {
-        System.out.println("       ____  \\\\       _____     ____   _    _ ");
-        System.out.println("      / ___   \\\\     |  __ \\   / ___  | |  | |");
-        System.out.println("     | |       \\\\    | |__) | | |     | |  | |");
-        System.out.println("     | |        ---- |  _  /  | |     | |  | |");
-        System.out.println("     | |___       // | | \\ \\  | |___  | |__| |");
-        System.out.println("      \\____      //  |_|  \\_\\  \\____  \\______/");
+        System.out.println("       ____ \\\\       _____     ____   _    _   _  _______");
+        System.out.println("      / ___  \\\\     |  __ \\   / ___  | |  | | | | |__ __|");
+        System.out.println("     | |      \\\\    | |__) | | |     | |  | | | |   | |");
+        System.out.println("     | |       ---- |  _  /  | |     | |  | | | |   | |");
+        System.out.println("     | |___      // | | \\ \\  | |___  | |__| | | |   | |");
+        System.out.println("      \\____     //  |_|  \\_\\  \\____  \\______/ |_|   |_|");
+
+        System.out.println("                     ____    _____    ____       ____       _  __  ____   _____     ");
+        System.out.println("                    |  _ \\  |  __ \\  |  __|     /    \\     | |/ / |__  | |  __ \\   ");
+        System.out.println("                    | |_) | | |__) | | |_      /  /\\  \\    | ' /    _| | | |__) |   ");
+        System.out.println("                    |  _  < |  _  /  |  _|    /  ____  \\   |  <    |_  | |  _  /    ");
+        System.out.println("                    | |_) | | | \\ \\  | |__   /  /    \\  \\  | . \\   __| | | | \\ \\  ");
+        System.out.println("                    |____/  |_|  \\_\\ |____| |__/      \\__| |_|\\_\\ |____| |_|  \\_\\ ");
         
-        System.out.println();
-        System.out.println("  > Press to Start <");
+        System.out.println("\n\n\n");
+        System.out.println("                                 > Press to Start <");
     }
     
     public void flushScreen()
