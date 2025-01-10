@@ -298,6 +298,7 @@ public class Game {
         Circuit circuit = new Circuit(4, 6);
         KeyInputListener keyInputListener = new KeyInputListener();
         Animation animation = new Animation();
+        char input = ' ';
 
         keyInputListener.setVisible(true);
 
@@ -314,11 +315,20 @@ public class Game {
 
         setInitialState(circuit);
 
+        input = keyInputListener.getInput();
+        while (input == ' ')
+            input = keyInputListener.getInput();
+        keyInputListener.resetInput();
+
+        printer.flushScreen();
+        printer.printCircuit(circuit);
+        redraw = false;
+
         // Game Logic
         while (true) 
         {
             // Reads input
-            char input = keyInputListener.getInput();
+            input = keyInputListener.getInput();
 
             // Treats inputs
             if (input != ' ') 
