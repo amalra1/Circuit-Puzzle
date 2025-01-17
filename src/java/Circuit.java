@@ -2,10 +2,11 @@ package src.java;
 
 public class Circuit
 {
+    Printer printer = new Printer();
+
     // Attributes
     private int lines, columns;
     private Block[][] blocks;
-    Printer printer = new Printer();
 
     // Constructor
     public Circuit(int lines, int columns) 
@@ -18,17 +19,17 @@ public class Circuit
     // Methods
     public int getLines() 
     { 
-        return lines; 
+        return this.lines; 
     } 
 
     public int getColumns() 
     { 
-        return columns; 
+        return this.columns; 
     }
 
     public Block[][] getCircuit() 
     { 
-        return blocks; 
+        return this.blocks; 
     } 
     
     public void setLines(int lines) 

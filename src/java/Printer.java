@@ -24,8 +24,10 @@ public class Printer
                 System.out.printf("\uD83D\uDFE1"); 
             else if (block.getSquares()[line][j].getId() == 6)  // BLUE SQUARE
                 System.out.printf("\uD83D\uDFE6"); 
-            else  // BLUE CIRCLE
-                System.out.printf("\uD83D\uDD35");     
+            else if (block.getSquares()[line][j].getId() == 7)  // BLUE CIRCLE
+                System.out.printf("\uD83D\uDD35");  
+            else
+                System.out.printf("\uD83D\uDFE5");   
         }
     }
 

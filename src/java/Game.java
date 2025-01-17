@@ -266,6 +266,9 @@ public class Game {
         circuit.setSpecificBlock(0, 3, block3);
         circuit.setSpecificBlock(0, 4, block4);
         circuit.setSpecificBlock(0, 5, block5);
+
+        // First to be selected by default (hard code way, fix later)
+        circuit.getCircuit()[0][1].setSelected(1);
     
         // Line 2
         circuit.setSpecificBlock(1, 0, block6);
@@ -294,19 +297,19 @@ public class Game {
 
     public static void main(String[] args) 
     {
+        // FLAGS
+        boolean redraw = false;
+
         Printer printer = new Printer();
         Circuit circuit = new Circuit(4, 6);
         KeyInputListener keyInputListener = new KeyInputListener();
-        Animation animation = new Animation();
+        Animation animation = new Animation(circuit, redraw);
         char input = ' ';
 
         keyInputListener.setVisible(true);
 
         // THREADS
         Thread animationThread = new Thread(animation);
-
-        // FLAGS
-        boolean redraw = false;
 
         printer.flushScreen();
         printer.printMenu();
@@ -322,7 +325,7 @@ public class Game {
 
         printer.flushScreen();
         printer.printCircuit(circuit);
-        redraw = false;
+        redraw = true;
 
         // Game Logic
         while (true) 
@@ -333,18 +336,15 @@ public class Game {
             // Treats inputs
             if (input != ' ') 
             {
-                if (input == 'r') 
-                {
-                    redraw = true;
-                } 
-                else if (input == 'q') 
+                if (input == 'q') 
                 {
                     System.out.println("Game ended by player choice");
                     break;
                 } 
                 else if (input == 'd') 
                 {
-                    // test
+                    // test - works
+                    //circuit.getCircuit()[0][2].setSelected(1);
                 }
 
                 // Resets input
@@ -352,7 +352,7 @@ public class Game {
             }
 
             // Draw
-            if (redraw) 
+            if (animation.getRedraw()) 
             {
                 printer.flushScreen();
                 printer.printCircuit(circuit);
