@@ -14,7 +14,7 @@ public class Block
         this.squares = new Symbol[lines][columns];
         this.setLines(lines);
         this.setColumns(columns); 
-        this.setSelected(0);
+        //this.setSelected(0);
         //this.setType(type);
     }
 
@@ -51,7 +51,23 @@ public class Block
 
     public void setSelected(int selected) 
     { 
-        this.selected = selected;  
+        this.selected = selected;
+        
+        // Change selected block color to red
+        if (selected == 1)
+        {
+            for (int k = 0; k < this.lines; k++) 
+                for (int l = 0; l < this.columns; l++) 
+                    if (this.squares[k][l].getId() == 0) 
+                        this.squares[k][l].setId(8);
+        }
+        else
+        {
+            for (int k = 0; k < this.lines; k++) 
+                for (int l = 0; l < this.columns; l++)     
+                    if (this.squares[k][l].getId() == 8) 
+                        this.squares[k][l].setId(0);
+        }
     }
 
     public void setSpecificSquare(int line, int column, int value) 

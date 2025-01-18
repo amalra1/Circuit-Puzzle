@@ -266,9 +266,6 @@ public class Game {
         circuit.setSpecificBlock(0, 3, block3);
         circuit.setSpecificBlock(0, 4, block4);
         circuit.setSpecificBlock(0, 5, block5);
-
-        // First to be selected by default (hard code way, fix later)
-        circuit.getCircuit()[0][1].setSelected(1);
     
         // Line 2
         circuit.setSpecificBlock(1, 0, block6);
@@ -303,20 +300,20 @@ public class Game {
         Printer printer = new Printer();
         Circuit circuit = new Circuit(4, 6);
         KeyInputListener keyInputListener = new KeyInputListener();
-        Animation animation = new Animation(circuit, redraw);
         char input = ' ';
+        int selectedX = 0, selectedY = 0;
 
         keyInputListener.setVisible(true);
-
-        // THREADS
-        Thread animationThread = new Thread(animation);
 
         printer.flushScreen();
         printer.printMenu();
 
-        animationThread.start();
-
         setInitialState(circuit);
+
+        // First to be selected by default (hard code way, fix later)
+        circuit.getCircuit()[0][1].setSelected(1);
+        selectedX = 0;
+        selectedY = 1;
 
         input = keyInputListener.getInput();
         while (input == ' ')
@@ -336,15 +333,71 @@ public class Game {
             // Treats inputs
             if (input != ' ') 
             {
+                // QUIT
                 if (input == 'q') 
                 {
                     System.out.println("Game ended by player choice");
                     break;
                 } 
+                // MOVE SELECTED RIGHT
                 else if (input == 'd') 
                 {
-                    // test - works
-                    //circuit.getCircuit()[0][2].setSelected(1);
+                    // Circuit limit
+                    if (selectedY + 1 < 5)
+                    {
+                        // Previous selected is not selected anymore
+                        circuit.getCircuit()[selectedX][selectedY].setSelected(0);
+                        selectedY++;
+                    }
+
+                    circuit.getCircuit()[selectedX][selectedY].setSelected(1);
+
+                    redraw = true;
+                }
+                // MOVE SELECTED LEFT
+                else if (input == 'a') 
+                {
+                    // Circuit limit
+                    if (selectedY - 1 > 0)
+                    {
+                        // Previous selected is not selected anymore
+                        circuit.getCircuit()[selectedX][selectedY].setSelected(0);
+                        selectedY--;
+                    }
+
+                    circuit.getCircuit()[selectedX][selectedY].setSelected(1);
+
+                    redraw = true;
+                }
+                // MOVE SELECTED DOWN
+                else if (input == 's') 
+                {
+                    // Circuit limit
+                    if (selectedX + 1 < 4)
+                    {
+                        // Previous selected is not selected anymore
+                        circuit.getCircuit()[selectedX][selectedY].setSelected(0);
+                        selectedX++;
+                    }
+
+                    circuit.getCircuit()[selectedX][selectedY].setSelected(1);
+
+                    redraw = true;
+                }
+                // MOVE SELECTED UP
+                else if (input == 'w') 
+                {
+                    // Circuit limit
+                    if (selectedX - 1 >= 0)
+                    {
+                        // Previous selected is not selected anymore
+                        circuit.getCircuit()[selectedX][selectedY].setSelected(0);
+                        selectedX--;
+                    }
+
+                    circuit.getCircuit()[selectedX][selectedY].setSelected(1);
+
+                    redraw = true;
                 }
 
                 // Resets input
@@ -352,7 +405,7 @@ public class Game {
             }
 
             // Draw
-            if (animation.getRedraw()) 
+            if (redraw) 
             {
                 printer.flushScreen();
                 printer.printCircuit(circuit);
@@ -360,8 +413,6 @@ public class Game {
             }
         }
 
-        animation.stop();
-        animationThread.interrupt();
         keyInputListener.dispose();
         
         System.out.println("Game ended");
