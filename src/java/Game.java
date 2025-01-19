@@ -5,7 +5,7 @@ public class Game {
     {
         // Create each block
         // Line 1
-        Block block0 = new Block(5, 5);
+        Block block0 = new Block(5, 5, "origin");
         int[][] block0Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -14,7 +14,7 @@ public class Game {
             {0, 0, 0, 0, 0},
         };
     
-        Block block1 = new Block(5, 5);
+        Block block1 = new Block(5, 5, "line");
         int[][] block1Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -23,7 +23,7 @@ public class Game {
             {0, 0, 0, 0, 0},
         };
     
-        Block block2 = new Block(5, 5);
+        Block block2 = new Block(5, 5, "double-l");
         int[][] block2Values = {
             {0, 0, 6, 0, 0},
             {0, 6, 6, 0, 0},
@@ -32,7 +32,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block3 = new Block(5, 5);
+        Block block3 = new Block(5, 5, "l");
         int[][] block3Values = {
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
@@ -41,7 +41,7 @@ public class Game {
             {0, 0, 0, 0, 0},
         };
     
-        Block block4 = new Block(5, 5);
+        Block block4 = new Block(5, 5, "over-bottom");
         int[][] block4Values = {
             {0, 0, 6, 0, 0},
             {0, 0, 0, 0, 0},
@@ -50,7 +50,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block5 = new Block(5, 5);
+        Block block5 = new Block(5, 5, "destiny");
         int[][] block5Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -61,7 +61,7 @@ public class Game {
     
         // Line 2
     
-        Block block6 = new Block(5, 5);
+        Block block6 = new Block(5, 5, "blank");
         int[][] block6Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -70,7 +70,7 @@ public class Game {
             {0, 0, 0, 0, 0},
         };
     
-        Block block7 = new Block(5, 5);
+        Block block7 = new Block(5, 5, "line");
         int[][] block7Values = {
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
@@ -79,7 +79,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block8 = new Block(5, 5);
+        Block block8 = new Block(5, 5, "line");
         int[][] block8Values = {
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
@@ -88,7 +88,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block9 = new Block(5, 5);
+        Block block9 = new Block(5, 5, "l");
         int[][] block9Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -97,7 +97,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block10 = new Block(5, 5);
+        Block block10 = new Block(5, 5, "double-l");
         int[][] block10Values = {
             {0, 0, 6, 0, 0},
             {0, 6, 6, 0, 0},
@@ -106,7 +106,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block11 = new Block(5, 5);
+        Block block11 = new Block(5, 5, "blank");
         int[][] block11Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -116,7 +116,7 @@ public class Game {
         };
     
         // Line 3
-        Block block12 = new Block(5, 5);
+        Block block12 = new Block(5, 5, "blank");
         int[][] block12Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -125,7 +125,7 @@ public class Game {
             {0, 0, 0, 0, 0},
         };
     
-        Block block13 = new Block(5, 5);
+        Block block13 = new Block(5, 5, "double-l");
         int[][] block13Values = {
             {0, 0, 6, 0, 0},
             {0, 6, 6, 0, 0},
@@ -134,7 +134,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block14 = new Block(5, 5);
+        Block block14 = new Block(5, 5, "over-bottom");
         int[][] block14Values = {
             {0, 0, 6, 0, 0},
             {0, 0, 0, 0, 0},
@@ -143,7 +143,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block15 = new Block(5, 5);
+        Block block15 = new Block(5, 5, "t");
         int[][] block15Values = {
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
@@ -152,7 +152,7 @@ public class Game {
             {0, 0, 0, 0, 0},
         };
     
-        Block block16 = new Block(5, 5);
+        Block block16 = new Block(5, 5, "l");
         int[][] block16Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -161,7 +161,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block17 = new Block(5, 5);
+        Block block17 = new Block(5, 5, "blank");
         int[][] block17Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -171,7 +171,7 @@ public class Game {
         };
     
         // Line 4
-        Block block18 = new Block(5, 5);
+        Block block18 = new Block(5, 5, "origin");
         int[][] block18Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -180,7 +180,7 @@ public class Game {
             {0, 0, 0, 0, 0},
         };
     
-        Block block19 = new Block(5, 5);
+        Block block19 = new Block(5, 5, "l");
         int[][] block19Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -189,7 +189,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block20 = new Block(5, 5);
+        Block block20 = new Block(5, 5, "double-l");
         int[][] block20Values = {
             {0, 0, 6, 0, 0},
             {0, 6, 6, 0, 0},
@@ -198,7 +198,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block21 = new Block(5, 5);
+        Block block21 = new Block(5, 5, "l");
         int[][] block21Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -207,7 +207,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block22 = new Block(5, 5);
+        Block block22 = new Block(5, 5, "line");
         int[][] block22Values = {
             {0, 0, 6, 0, 0},
             {0, 0, 6, 0, 0},
@@ -216,7 +216,7 @@ public class Game {
             {0, 0, 6, 0, 0},
         };
     
-        Block block23 = new Block(5, 5);
+        Block block23 = new Block(5, 5, "blank");
         int[][] block23Values = {
             {0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0},
@@ -260,36 +260,36 @@ public class Game {
     
         // Set block in Circuit
         // Line 1
-        circuit.setSpecificBlock(0, 0, block0);
-        circuit.setSpecificBlock(0, 1, block1);
-        circuit.setSpecificBlock(0, 2, block2);
-        circuit.setSpecificBlock(0, 3, block3);
-        circuit.setSpecificBlock(0, 4, block4);
-        circuit.setSpecificBlock(0, 5, block5);
+        circuit.setSpecificBlock(0, 0, block0, block0.getType());
+        circuit.setSpecificBlock(0, 1, block1, block1.getType());
+        circuit.setSpecificBlock(0, 2, block2, block2.getType());
+        circuit.setSpecificBlock(0, 3, block3, block3.getType());
+        circuit.setSpecificBlock(0, 4, block4, block4.getType());
+        circuit.setSpecificBlock(0, 5, block5, block5.getType());
     
         // Line 2
-        circuit.setSpecificBlock(1, 0, block6);
-        circuit.setSpecificBlock(1, 1, block7);
-        circuit.setSpecificBlock(1, 2, block8);
-        circuit.setSpecificBlock(1, 3, block9);
-        circuit.setSpecificBlock(1, 4, block10);
-        circuit.setSpecificBlock(1, 5, block11);
+        circuit.setSpecificBlock(1, 0, block6, block6.getType());
+        circuit.setSpecificBlock(1, 1, block7, block7.getType());
+        circuit.setSpecificBlock(1, 2, block8, block8.getType());
+        circuit.setSpecificBlock(1, 3, block9, block9.getType());
+        circuit.setSpecificBlock(1, 4, block10, block10.getType());
+        circuit.setSpecificBlock(1, 5, block11, block11.getType());
     
         // Line 3
-        circuit.setSpecificBlock(2, 0, block12);
-        circuit.setSpecificBlock(2, 1, block13);
-        circuit.setSpecificBlock(2, 2, block14);
-        circuit.setSpecificBlock(2, 3, block15);
-        circuit.setSpecificBlock(2, 4, block16);
-        circuit.setSpecificBlock(2, 5, block17);
+        circuit.setSpecificBlock(2, 0, block12, block12.getType());
+        circuit.setSpecificBlock(2, 1, block13, block13.getType());
+        circuit.setSpecificBlock(2, 2, block14, block14.getType());
+        circuit.setSpecificBlock(2, 3, block15, block15.getType());
+        circuit.setSpecificBlock(2, 4, block16, block16.getType());
+        circuit.setSpecificBlock(2, 5, block17, block17.getType());
     
         // Line 4
-        circuit.setSpecificBlock(3, 0, block18);
-        circuit.setSpecificBlock(3, 1, block19);
-        circuit.setSpecificBlock(3, 2, block20);
-        circuit.setSpecificBlock(3, 3, block21);
-        circuit.setSpecificBlock(3, 4, block22);
-        circuit.setSpecificBlock(3, 5, block23);
+        circuit.setSpecificBlock(3, 0, block18, block18.getType());
+        circuit.setSpecificBlock(3, 1, block19, block19.getType());
+        circuit.setSpecificBlock(3, 2, block20, block20.getType());
+        circuit.setSpecificBlock(3, 3, block21, block21.getType());
+        circuit.setSpecificBlock(3, 4, block22, block22.getType());
+        circuit.setSpecificBlock(3, 5, block23, block23.getType());
     }
 
     public static void main(String[] args) 

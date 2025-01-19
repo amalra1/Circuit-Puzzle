@@ -42,12 +42,12 @@ public class Circuit
         this.columns = columns;  
     }
 
-    public void setSpecificBlock(int line, int column, Block block)
+    public void setSpecificBlock(int line, int column, Block block, String type)
     {
         if (line < 0 || line >= this.lines || column < 0 || column >= this.columns) 
             throw new IllegalArgumentException("Trying to set out of circuit bounds");
     
-        Block newBlock = new Block(block.getLines(), block.getColumns());
+        Block newBlock = new Block(block.getLines(), block.getColumns(), type);
         
         for (int i = 0; i < block.getLines(); i++)
             for (int j = 0; j < block.getColumns(); j++)

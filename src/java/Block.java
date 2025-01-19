@@ -4,17 +4,17 @@ public class Block
 {
     // Attributes
     private int lines, columns;
-    //private String type;
+    private String type;
     private int selected;
     private Symbol[][] squares;
 
     // Constructor
-    public Block(int lines, int columns) 
+    public Block(int lines, int columns, String type) 
     { 
         this.squares = new Symbol[lines][columns];
         this.setLines(lines);
         this.setColumns(columns); 
-        //this.setType(type);
+        this.setType(type);
     }
 
     // Methods
@@ -37,6 +37,11 @@ public class Block
     { 
         return this.squares; 
     }
+
+    public String getType() 
+    { 
+        return this.type; 
+    }
     
     public void setLines(int lines) 
     { 
@@ -46,6 +51,11 @@ public class Block
     public void setColumns(int columns) 
     { 
         this.columns = columns;  
+    }
+
+    public void setType(String type) 
+    { 
+        this.type = type;  
     }
 
     public void setSelected(int selected) 
