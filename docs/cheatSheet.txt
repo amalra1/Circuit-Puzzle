@@ -7,7 +7,7 @@ Color Description                         Unicode ID
 🟡    Destination filled with all pulses  U1F7E1  5
 🟦    Wire with no signal                 UDFE6   6
 🔵    Destination not filled              U1F535  7
-🟥    Blinking selected block background  U1F7E5  8
+🟥    Selected block background           U1F7E5  8
 
 -- Circuit Blocks [5x5] -- 
 All of them can be rotated
@@ -47,7 +47,7 @@ All of them can be rotated
 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫
 
-6. 'double l'
+6. 'double-l'
 🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟦🟫🟫
 🟫🟦🟦🟫🟫 🟫🟧🟧🟫🟫 🟫🟦🟦🟫🟫
 🟦🟦🟫🟦🟦 🟧🟧🟫🟧🟧 🟦🟦🟫🟧🟧
