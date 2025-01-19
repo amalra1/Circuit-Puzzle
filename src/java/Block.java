@@ -14,7 +14,6 @@ public class Block
         this.squares = new Symbol[lines][columns];
         this.setLines(lines);
         this.setColumns(columns); 
-        //this.setSelected(0);
         //this.setType(type);
     }
 
@@ -61,7 +60,7 @@ public class Block
                     if (this.squares[k][l].getId() == 0) 
                         this.squares[k][l].setId(8);
         }
-        else
+        else // Red to brown
         {
             for (int k = 0; k < this.lines; k++) 
                 for (int l = 0; l < this.columns; l++)     

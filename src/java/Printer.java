@@ -76,6 +76,14 @@ public class Printer
         System.out.println("\n\n\n");
         System.out.println("                                 > Press to Start <");
     }
+
+    public void printFooterInfos()
+    {
+        System.out.println("Find a way to turn on electricity by rotating the blocks and creating a path\n");
+        System.out.println("- WASD to move through blocks.\n");
+        System.out.println("- (?) to spin the selected block\n");
+        System.out.println("- Q to quit the game.\n");
+    }
     
     public void flushScreen()
     {

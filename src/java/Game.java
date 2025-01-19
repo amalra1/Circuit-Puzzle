@@ -297,6 +297,7 @@ public class Game {
         // FLAGS
         boolean redraw = false;
 
+        // VARIABLES
         Printer printer = new Printer();
         Circuit circuit = new Circuit(4, 6);
         KeyInputListener keyInputListener = new KeyInputListener();
@@ -305,6 +306,7 @@ public class Game {
 
         keyInputListener.setVisible(true);
 
+        // Prints menu on screen
         printer.flushScreen();
         printer.printMenu();
 
@@ -315,13 +317,16 @@ public class Game {
         selectedX = 0;
         selectedY = 1;
 
+        // Input to start game logic
         input = keyInputListener.getInput();
         while (input == ' ')
             input = keyInputListener.getInput();
         keyInputListener.resetInput();
 
+        // Starts game
         printer.flushScreen();
         printer.printCircuit(circuit);
+        printer.printFooterInfos();
         redraw = true;
 
         // Game Logic
@@ -336,67 +341,41 @@ public class Game {
                 // QUIT
                 if (input == 'q') 
                 {
-                    System.out.println("Game ended by player choice");
+                    System.out.println("Player chose to end it.");
                     break;
                 } 
-                // MOVE SELECTED RIGHT
-                else if (input == 'd') 
+
+                // MOVE SELECTED
+                int newX = selectedX;
+                int newY = selectedY;
+
+                switch (input) 
                 {
-                    // Circuit limit
-                    if (selectedY + 1 < 5)
-                    {
-                        // Previous selected is not selected anymore
-                        circuit.getCircuit()[selectedX][selectedY].setSelected(0);
-                        selectedY++;
-                    }
-
-                    circuit.getCircuit()[selectedX][selectedY].setSelected(1);
-
-                    redraw = true;
+                    case 'd': // RIGHT
+                        if (selectedY + 1 < 5) 
+                            newY++;
+                        break;
+                    case 'a': // LEFT
+                        if (selectedY - 1 > 0) 
+                            newY--;
+                        break;
+                    case 's': // DOWN
+                        if (selectedX + 1 < 4) 
+                            newX++;
+                        break;
+                    case 'w': // UP
+                        if (selectedX - 1 >= 0) 
+                            newX--;
+                        break;
                 }
-                // MOVE SELECTED LEFT
-                else if (input == 'a') 
+
+                // Update selection
+                if (newX != selectedX || newY != selectedY) 
                 {
-                    // Circuit limit
-                    if (selectedY - 1 > 0)
-                    {
-                        // Previous selected is not selected anymore
-                        circuit.getCircuit()[selectedX][selectedY].setSelected(0);
-                        selectedY--;
-                    }
-
+                    circuit.getCircuit()[selectedX][selectedY].setSelected(0);
+                    selectedX = newX;
+                    selectedY = newY;
                     circuit.getCircuit()[selectedX][selectedY].setSelected(1);
-
-                    redraw = true;
-                }
-                // MOVE SELECTED DOWN
-                else if (input == 's') 
-                {
-                    // Circuit limit
-                    if (selectedX + 1 < 4)
-                    {
-                        // Previous selected is not selected anymore
-                        circuit.getCircuit()[selectedX][selectedY].setSelected(0);
-                        selectedX++;
-                    }
-
-                    circuit.getCircuit()[selectedX][selectedY].setSelected(1);
-
-                    redraw = true;
-                }
-                // MOVE SELECTED UP
-                else if (input == 'w') 
-                {
-                    // Circuit limit
-                    if (selectedX - 1 >= 0)
-                    {
-                        // Previous selected is not selected anymore
-                        circuit.getCircuit()[selectedX][selectedY].setSelected(0);
-                        selectedX--;
-                    }
-
-                    circuit.getCircuit()[selectedX][selectedY].setSelected(1);
-
                     redraw = true;
                 }
 
@@ -409,6 +388,7 @@ public class Game {
             {
                 printer.flushScreen();
                 printer.printCircuit(circuit);
+                printer.printFooterInfos();
                 redraw = false;
             }
         }
