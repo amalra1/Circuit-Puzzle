@@ -83,4 +83,16 @@ public class Block
             for (int j = 0; j < this.columns; j++) 
                 this.squares[i][j] = new Symbol(values[i][j]);
     }
+
+    public void rotateRight() 
+    {
+        int[][] newSquares = new int[this.lines][this.lines];
+
+        // 45 degrees right rotation
+        for (int i = 0; i < this.lines; i++) 
+            for (int j = 0; j < this.lines; j++) 
+                newSquares[j][this.lines - 1 - i] = this.squares[i][j].getId();
+
+        this.setSquares(newSquares);
+    }
 }

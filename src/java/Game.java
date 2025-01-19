@@ -367,6 +367,10 @@ public class Game {
                         if (selectedX - 1 >= 0) 
                             newX--;
                         break;
+                    case 'k': // ROTATE
+                        circuit.getCircuit()[selectedX][selectedY].rotateRight();
+                        redraw = true;
+                        break;
                 }
 
                 // Update selection
