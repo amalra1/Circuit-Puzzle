@@ -9,8 +9,10 @@ Color Description                         Unicode ID
 🔵    Destination not filled              U1F535  7
 🟥    Selected block background           U1F7E5  8
 
+maybe this should be the readme.md idk
+
 -- Circuit Blocks [5x5] -- 
-All of them can be rotated
+All of them can be rotated (Except for 'over-bottom')
 
 1. 'blank'
 🟫🟫🟫🟫🟫
@@ -33,28 +35,21 @@ All of them can be rotated
 🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟨🟫🟫
 🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟨🟫🟫 
 
-4. 'rev-l'
+4. 'l'
 🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟨🟫🟫
-🟫🟦🟦🟫🟫 🟫🟧🟧🟫🟫 🟫🟨🟨🟫🟫
-🟦🟦🟫🟫🟫 🟧🟧🟫🟫🟫 🟨🟨🟫🟫🟫
+🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟨🟫🟫
+🟫🟫🟦🟦🟦 🟫🟫🟧🟧🟧 🟫🟫🟨🟨🟨 
 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫
 
-5. 'l'
-🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟨🟫🟫
-🟫🟫🟦🟦🟫 🟫🟫🟧🟧🟫 🟫🟫🟨🟨🟫
-🟫🟫🟫🟦🟦 🟫🟫🟫🟧🟧 🟫🟫🟫🟨🟨 
-🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫
-🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫 🟫🟫🟫🟫🟫
-
-6. 'double-l'
+5. 'double-l'
 🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟦🟫🟫
 🟫🟦🟦🟫🟫 🟫🟧🟧🟫🟫 🟫🟦🟦🟫🟫
 🟦🟦🟫🟦🟦 🟧🟧🟫🟧🟧 🟦🟦🟫🟧🟧
 🟫🟫🟦🟦🟫 🟫🟫🟧🟧🟫 🟫🟫🟧🟧🟫
 🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟧🟫🟫 ...
 
-7. 'over-bottom'
+6. 'over-bottom' (Not rotatable)
 🟫🟫🟦🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟦🟫🟫 🟫🟫🟨🟫🟫 🟫🟫🟧🟫🟫
 🟫🟫🟫🟫🟫 🟫🟫🟧🟫🟫 🟫🟫🟫🟫🟫 🟫🟫🟨🟫🟫 🟫🟫🟧🟫🟫
 🟦🟫🟫🟫🟦 🟦🟫🟧🟫🟦 🟧🟧🟧🟧🟧 🟧🟧🟨🟧🟧 🟨🟨🟨🟨🟨 
