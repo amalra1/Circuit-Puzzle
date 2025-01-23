@@ -328,6 +328,7 @@ public class Game {
         printer.printCircuit(circuit);
         printer.printFooterInfos();
         redraw = true;
+        circuit.checkElectricity();
 
         // Game Logic
         while (true) 
@@ -368,8 +369,11 @@ public class Game {
                             newX--;
                         break;
                     case 'k': // ROTATE
-                        circuit.getCircuit()[selectedX][selectedY].rotateRight();
-                        redraw = true;
+                        if (circuit.getCircuit()[selectedX][selectedY].getType() != "over-bottom")
+                        {
+                            circuit.getCircuit()[selectedX][selectedY].rotateRight();
+                            redraw = true;
+                        }
                         break;
                 }
 
@@ -386,6 +390,9 @@ public class Game {
                 // Resets input
                 keyInputListener.resetInput();
             }
+
+            // Check whole table for updates on the electricity path
+            circuit.checkElectricity();
 
             // Draw
             if (redraw) 

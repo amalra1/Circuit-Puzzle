@@ -81,7 +81,7 @@ public class Printer
     {
         System.out.println("Find a way to turn on electricity by rotating the blocks and creating a path\n");
         System.out.println("- WASD to move through blocks.\n");
-        System.out.println("- (?) to spin the selected block\n");
+        System.out.println("- K to spin the selected block\n");
         System.out.println("- Q to quit the game.\n");
     }
     

@@ -79,6 +79,23 @@ public class Block
         }
     }
 
+    public void fillWire(String color)
+    {
+        if (color == "orange")
+        {
+            for (int k = 0; k < this.lines; k++)
+            { 
+                for (int l = 0; l < this.columns; l++)
+                {     
+                    if (this.squares[k][l].getId() == 6) 
+                        this.squares[k][l].setId(2);
+                    else if (this.squares[k][l].getId() == 7)
+                        this.squares[k][l].setId(3);
+                }
+            }
+        }
+    }
+
     public void setSpecificSquare(int line, int column, int value) 
     { 
         if (line < 0 || line >= this.lines || column < 0 || column >= this.columns) 

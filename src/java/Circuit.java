@@ -62,4 +62,60 @@ public class Circuit
             for (int j = 0; j < this.columns; j++) 
                 this.blocks[i][j] = blocks[i][j];
     }
+
+    public void checkElectricity()
+    {
+        // For every block
+        for (int i = 0; i < this.lines; i++) 
+        {
+            for (int j = 0; j < this.columns; j++) 
+            {
+                Block currentBlock = this.blocks[i][j];
+
+                // Right side check
+                if (currentBlock.getSquares()[2][4].getId() == 2 || currentBlock.getSquares()[2][4].getId() == 3)
+                {
+                    // If connection square is blue, paint the block wire orange
+                    if (j + 1 < this.columns)
+                    {
+                        if (blocks[i][j + 1].getSquares()[2][0].getId() == 6 || blocks[i][j + 1].getSquares()[2][0].getId() == 7)
+                            blocks[i][j + 1].fillWire("orange");
+                    }
+                }
+
+                // Downwards check
+                if (currentBlock.getSquares()[4][2].getId() == 2)
+                {
+                    if (i + 1 < this.lines)
+                    {
+                        // If connection square is blue, paint the block wire orange
+                        if (blocks[i + 1][j].getSquares()[0][2].getId() == 6 || blocks[i + 1][j].getSquares()[0][2].getId() == 7)
+                            blocks[i + 1][j].fillWire("orange");
+                    }
+                }
+
+                // Left side check
+                if (currentBlock.getSquares()[2][0].getId() == 2)
+                {
+                    // If connection square is blue, paint the block wire orange
+                    if (j - 1 >= 0)
+                    {
+                        if (blocks[i][j - 1].getSquares()[2][4].getId() == 6 || blocks[i][j - 1].getSquares()[2][4].getId() == 7)
+                            blocks[i][j - 1].fillWire("orange");
+                    }
+                }
+
+                // Top side check
+                if (currentBlock.getSquares()[0][2].getId() == 2)
+                {
+                    // If connection square is blue, paint the block wire orange
+                    if (i - 1 >= 0)
+                    {
+                        if (blocks[i - 1][j].getSquares()[4][2].getId() == 6 || blocks[i - 1][j].getSquares()[4][2].getId() == 7)
+                            blocks[i - 1][j].fillWire("orange");
+                    }
+                }
+            }
+        }
+    }
 }
