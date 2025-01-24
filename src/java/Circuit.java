@@ -63,59 +63,60 @@ public class Circuit
                 this.blocks[i][j] = blocks[i][j];
     }
 
-    public void checkElectricity()
+    public void checkElectricity() 
     {
-        // For every block
+        // Origins coordinates
+        int[][] origins = {{0, 0}, {3, 0}};
+
+        // Reset all blocks to blue 
         for (int i = 0; i < this.lines; i++) 
-        {
             for (int j = 0; j < this.columns; j++) 
-            {
-                Block currentBlock = this.blocks[i][j];
+                this.blocks[i][j].fillWire("blue");
 
-                // Right side check
-                if (currentBlock.getSquares()[2][4].getId() == 2 || currentBlock.getSquares()[2][4].getId() == 3)
-                {
-                    // If connection square is blue, paint the block wire orange
-                    if (j + 1 < this.columns)
-                    {
-                        if (blocks[i][j + 1].getSquares()[2][0].getId() == 6 || blocks[i][j + 1].getSquares()[2][0].getId() == 7)
-                            blocks[i][j + 1].fillWire("orange");
-                    }
-                }
+        // Check electricity connections through blocks from the origins
+        for (int[] origin : origins) 
+        {
+            int pathI = origin[0];
+            int pathJ = origin[1];
+            followPath(pathI, pathJ);
+        }
+    }
 
-                // Downwards check
-                if (currentBlock.getSquares()[4][2].getId() == 2)
-                {
-                    if (i + 1 < this.lines)
-                    {
-                        // If connection square is blue, paint the block wire orange
-                        if (blocks[i + 1][j].getSquares()[0][2].getId() == 6 || blocks[i + 1][j].getSquares()[0][2].getId() == 7)
-                            blocks[i + 1][j].fillWire("orange");
-                    }
-                }
+    private void followPath(int i, int j) 
+    {
+        Block currentBlock = this.blocks[i][j];
+        Symbol[][] squares = currentBlock.getSquares();
 
-                // Left side check
-                if (currentBlock.getSquares()[2][0].getId() == 2)
-                {
-                    // If connection square is blue, paint the block wire orange
-                    if (j - 1 >= 0)
-                    {
-                        if (blocks[i][j - 1].getSquares()[2][4].getId() == 6 || blocks[i][j - 1].getSquares()[2][4].getId() == 7)
-                            blocks[i][j - 1].fillWire("orange");
-                    }
-                }
+        // Color the current block's wire orange if it's blue
+        currentBlock.fillWire("orange");
 
-                // Top side check
-                if (currentBlock.getSquares()[0][2].getId() == 2)
-                {
-                    // If connection square is blue, paint the block wire orange
-                    if (i - 1 >= 0)
-                    {
-                        if (blocks[i - 1][j].getSquares()[4][2].getId() == 6 || blocks[i - 1][j].getSquares()[4][2].getId() == 7)
-                            blocks[i - 1][j].fillWire("orange");
-                    }
-                }
-            }
+        // Right side check
+        if (squares[2][4].getId() == 2 || squares[2][4].getId() == 3) 
+        {
+            if (j + 1 < this.columns && (this.blocks[i][j + 1].getSquares()[2][0].getId() == 6 || this.blocks[i][j + 1].getSquares()[2][0].getId() == 7))
+                followPath(i, j + 1);
+        }
+
+        // Downwards check
+        if (squares[4][2].getId() == 2) 
+        {
+            if (i + 1 < this.lines && this.blocks[i + 1][j].getSquares()[0][2].getId() == 6)
+                followPath(i + 1, j);
+        }
+
+        // Left side check
+        if (squares[2][0].getId() == 2) 
+        {
+            if (j - 1 >= 0 && this.blocks[i][j - 1].getSquares()[2][4].getId() == 6)
+                followPath(i, j - 1);
+        }
+
+        // Top side check
+        if (squares[0][2].getId() == 2) 
+        {
+            if (i - 1 >= 0 && this.blocks[i - 1][j].getSquares()[4][2].getId() == 6)
+                followPath(i - 1, j);
         }
     }
 }
+

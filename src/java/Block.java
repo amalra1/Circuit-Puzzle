@@ -94,6 +94,20 @@ public class Block
                 }
             }
         }
+
+        else if (color == "blue")
+        {
+            for (int k = 0; k < this.lines; k++)
+            { 
+                for (int l = 0; l < this.columns; l++)
+                {     
+                    if (this.squares[k][l].getId() == 2) 
+                        this.squares[k][l].setId(6);
+                    else if (this.squares[k][l].getId() == 3)
+                        this.squares[k][l].setId(7);
+                }
+            }
+        }
     }
 
     public void setSpecificSquare(int line, int column, int value) 

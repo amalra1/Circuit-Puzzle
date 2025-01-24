@@ -374,6 +374,7 @@ public class Game {
                             circuit.getCircuit()[selectedX][selectedY].rotateRight();
                             redraw = true;
                         }
+
                         break;
                 }
 
