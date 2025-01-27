@@ -63,60 +63,62 @@ public class Circuit
                 this.blocks[i][j] = blocks[i][j];
     }
 
-    public void checkElectricity() 
-    {
+    public void checkElectricity() {
         // Origins coordinates
         int[][] origins = {{0, 0}, {3, 0}};
-
+    
         // Reset all blocks to blue 
         for (int i = 0; i < this.lines; i++) 
             for (int j = 0; j < this.columns; j++) 
                 this.blocks[i][j].fillWire("blue");
-
+    
         // Check electricity connections through blocks from the origins
-        for (int[] origin : origins) 
-        {
+        for (int[] origin : origins) {
             int pathI = origin[0];
             int pathJ = origin[1];
-            followPath(pathI, pathJ);
+            followPath(pathI, pathJ, 2);
         }
     }
-
-    private void followPath(int i, int j) 
-    {
+    
+    // DIRECTION: 0 - Right, 1 - Down, 2 - Left, 3 - Up
+    private void followPath(int i, int j, int direction) {
         Block currentBlock = this.blocks[i][j];
         Symbol[][] squares = currentBlock.getSquares();
-
-        // Color the current block's wire orange if it's blue
-        currentBlock.fillWire("orange");
-
+    
+        if (!currentBlock.getType().equals("double-l")) 
+        {
+            // Color the current block's wire orange if it's blue
+            currentBlock.fillWire("orange");
+        }
+        else
+        {
+            // Color the current block's wire orange based on direction
+            currentBlock.fillWire("orange", direction);
+        }
+    
         // Right side check
-        if (squares[2][4].getId() == 2 || squares[2][4].getId() == 3) 
-        {
+        if (squares[2][4].getId() == 2 || squares[2][4].getId() == 3) {
             if (j + 1 < this.columns && (this.blocks[i][j + 1].getSquares()[2][0].getId() == 6 || this.blocks[i][j + 1].getSquares()[2][0].getId() == 7))
-                followPath(i, j + 1);
+                followPath(i, j + 1, 2); 
         }
-
+    
         // Downwards check
-        if (squares[4][2].getId() == 2) 
-        {
+        if (squares[4][2].getId() == 2) {
             if (i + 1 < this.lines && this.blocks[i + 1][j].getSquares()[0][2].getId() == 6)
-                followPath(i + 1, j);
+                followPath(i + 1, j, 3); 
         }
-
+    
         // Left side check
-        if (squares[2][0].getId() == 2) 
-        {
+        if (squares[2][0].getId() == 2) {
             if (j - 1 >= 0 && this.blocks[i][j - 1].getSquares()[2][4].getId() == 6)
-                followPath(i, j - 1);
+                followPath(i, j - 1, 0); 
         }
-
+    
         // Top side check
-        if (squares[0][2].getId() == 2) 
-        {
+        if (squares[0][2].getId() == 2) {
             if (i - 1 >= 0 && this.blocks[i - 1][j].getSquares()[4][2].getId() == 6)
-                followPath(i - 1, j);
+                followPath(i - 1, j, 1); 
         }
-    }
+    }    
 }
 

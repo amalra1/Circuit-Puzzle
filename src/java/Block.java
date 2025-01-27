@@ -110,6 +110,70 @@ public class Block
         }
     }
 
+    // DIRECTION: 0 - Right, 1 - Down, 2 - Left, 3 - Up
+    public void fillWire(String color, int direction)
+    {
+        if (color == "orange")
+        {
+            for (int k = 0; k < this.lines; k++)
+            { 
+                for (int l = 0; l < this.columns; l++)
+                {
+                    if (direction == 0 || direction == 1)
+                    {
+                        if ((k == 0 && l != 2) || (k == 1 && (l != 1 && l != 2)) || (k == 2 && (l != 0 && l != 1)) || k == 3 || k == 4)
+                        {
+                            if (this.squares[k][l].getId() == 6) 
+                                this.squares[k][l].setId(2);
+                            else if (this.squares[k][l].getId() == 7)
+                                this.squares[k][l].setId(3);
+                        }
+                    }
+                    else if (direction == 2 || direction == 3)
+                    {
+                        if ((k == 4 && l != 2) || (k == 3 && (l != 2 && l != 3)) || (k == 2 && (l != 3 && l != 4)) || k == 0 || k == 1)
+                        {
+                            if (this.squares[k][l].getId() == 6) 
+                                this.squares[k][l].setId(2);
+                            else if (this.squares[k][l].getId() == 7)
+                                this.squares[k][l].setId(3);
+                        }
+                    }
+                }
+            }
+        }
+
+        else if (color == "blue")
+        {
+            for (int k = 0; k < this.lines; k++)
+            { 
+                for (int l = 0; l < this.columns; l++)
+                {
+                    if (direction == 0 || direction == 1)
+                    {
+                        if ((k != 0 && l != 2) && (k != 1 && (l != 1 && l != 2) && (k != 2 && (l != 0 && l != 1))))
+                        {
+                            if (this.squares[k][l].getId() == 2) 
+                                this.squares[k][l].setId(6);
+                            else if (this.squares[k][l].getId() == 3)
+                                this.squares[k][l].setId(7);
+                        }
+                    }
+                    else
+                    {
+                        if ((k != 4 && l != 2) && (k != 3 && (l != 2 && l != 3) && (k != 2 && (l != 3 && l != 4))))
+                        {
+                            if (this.squares[k][l].getId() == 2) 
+                                this.squares[k][l].setId(6);
+                            else if (this.squares[k][l].getId() == 3)
+                                this.squares[k][l].setId(7);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public void setSpecificSquare(int line, int column, int value) 
     { 
         if (line < 0 || line >= this.lines || column < 0 || column >= this.columns) 
